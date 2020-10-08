@@ -17,6 +17,10 @@ app.use(cors());
 
 const port = 5500
 
+app.get('/', (req, res) => {
+    res.send("its working")
+})
+
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
     const AllActivityCollection = client.db("volunteerActivity").collection("activities");
